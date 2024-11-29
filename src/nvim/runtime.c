@@ -1680,16 +1680,12 @@ char *get_lib_dir(void)
 char *runtimepath_default(bool clean_arg)
 {
   size_t rtp_size = 0;
-  char *const data_home = clean_arg
-                          ? NULL
-                          : stdpaths_get_xdg_var(kXDGDataHome);
-  char *const config_home = clean_arg
-                            ? NULL
-                            : stdpaths_get_xdg_var(kXDGConfigHome);
+  char *const data_home = NULL;
+  char *const config_home = NULL;
   char *const vimruntime = vim_getenv("VIMRUNTIME");
   char *const libdir = get_lib_dir();
-  char *const data_dirs = stdpaths_get_xdg_var(kXDGDataDirs);
-  char *const config_dirs = stdpaths_get_xdg_var(kXDGConfigDirs);
+  char *const data_dirs = NULL;
+  char *const config_dirs = NULL;
 #define SITE_SIZE (sizeof("site") - 1)
 #define AFTER_SIZE (sizeof("after") - 1)
   size_t data_len = 0;
